@@ -1,37 +1,39 @@
 class Colibri < Formula
-  desc "Local RAG system for semantic search over markdown content"
-  homepage "https://github.com/TobiSchelling/CoLibri"
-  version "0.4.0"
+  include Language::Python::Virtualenv
+
+  desc "Local-first RAG for technical books and notes (CoLibri)"
+  homepage "https://gitlab.com/Tobias.Schelling/CoLibri"
+
+  version "0.2.0"
+  url "file:///Users/tobias/GIT_ROOT/GIT_HUB/CoLibri/dist/colibri-0.2.0.tar.gz"
+  sha256 "beae316a7e04307a683cb9da4222c235703a042aad18805d7b215653c96cde2d"
+
   license "MIT"
 
-  on_macos do
-    on_arm do
-      url "https://github.com/TobiSchelling/CoLibri/releases/download/v#{version}/colibri-#{version}-macos-arm64.tar.gz"
-      sha256 "618174fe39710634507b35ed94a70ffd4da6eca8aa8e8bbc7e3eae15c06ee91c"
-    end
-  end
+  depends_on "python@3.12"
+
+  # If you add non-Python dependencies (e.g. poppler), declare them here.
+  # depends_on "poppler"
 
   def install
-    bin.install "colibri"
+    virtualenv_install_with_resources
   end
 
   def caveats
     <<~EOS
-      CoLibri requires Ollama for local embeddings.
+      CoLibri uses Ollama for local embeddings.
 
-      Install and start Ollama:
         brew install ollama
-        ollama serve
         ollama pull nomic-embed-text
 
-      Then verify installation:
-        colibri doctor
+      Then run:
 
-      Configure sources in ~/.config/colibri/config.yaml
+        colibri doctor
+        colibri index
     EOS
   end
 
   test do
-    assert_match "colibri", shell_output("#{bin}/colibri --help")
+    assert_match "CoLibri", shell_output("#{bin}/colibri --help")
   end
 end
