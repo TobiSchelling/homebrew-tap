@@ -17,13 +17,14 @@ brew install TobiSchelling/tap/colibri
 
 ## Available Formulae
 
+- `aicrawler`: daily narrative briefings about practical AI developments
 - `colibri`: local-first RAG for technical books and notes
 
 ## Maintainers
 
-- Update `Formula/colibri.rb` to a tagged release artifact URL and SHA-256.
+- Update `Formula/<name>.rb` to a tagged release artifact URL and SHA-256.
 - Regenerate Python dependency resource blocks:
 
 ```bash
-brew update-python-resources colibri
+brew update-python-resources tobischelling/tap/<name>
 ```
