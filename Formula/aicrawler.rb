@@ -5,21 +5,21 @@
 class Aicrawler < Formula
   desc "Daily AI news briefings"
   homepage "https://github.com/TobiSchelling/AICrawler"
-  version "1.0.1"
+  version "1.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/TobiSchelling/AICrawler/releases/download/v1.0.1/AICrawler_1.0.1_darwin_amd64.tar.gz"
-      sha256 "cfbbf7e56c88d3fb5be6acb94a0ed31cb73259b4edbc7881f96441b45c14595d"
+      url "https://github.com/TobiSchelling/AICrawler/releases/download/v1.0.3/AICrawler_1.0.3_darwin_amd64.tar.gz"
+      sha256 "157911caf0c3f0a46370c7bf247a05ef18d07f183f2540acd8c284e33257ab2c"
 
       def install
         bin.install "aicrawler"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/TobiSchelling/AICrawler/releases/download/v1.0.1/AICrawler_1.0.1_darwin_arm64.tar.gz"
-      sha256 "badf241380318546e39e5f73acd3559942fc76fe999d63e6ffd28e47f70add09"
+      url "https://github.com/TobiSchelling/AICrawler/releases/download/v1.0.3/AICrawler_1.0.3_darwin_arm64.tar.gz"
+      sha256 "ab6e7428a96d6d190c86979cbc85e2201606166920170b2df8827630dcfa1a19"
 
       def install
         bin.install "aicrawler"
@@ -29,15 +29,15 @@ class Aicrawler < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TobiSchelling/AICrawler/releases/download/v1.0.1/AICrawler_1.0.1_linux_amd64.tar.gz"
-      sha256 "d384e8139f1681c321e177707bfe77aac9a761df539676ae395f06d4bfdc5c7b"
+      url "https://github.com/TobiSchelling/AICrawler/releases/download/v1.0.3/AICrawler_1.0.3_linux_amd64.tar.gz"
+      sha256 "f630db6f29363a7cfba11dad66dc337de19dbf2e760f372a01d0a71fd5a85d98"
       def install
         bin.install "aicrawler"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TobiSchelling/AICrawler/releases/download/v1.0.1/AICrawler_1.0.1_linux_arm64.tar.gz"
-      sha256 "3d46d1020e00cfd31badcf661e62813328b5ebfa3c98adcdb0e30bfbcd45bc0b"
+      url "https://github.com/TobiSchelling/AICrawler/releases/download/v1.0.3/AICrawler_1.0.3_linux_arm64.tar.gz"
+      sha256 "c71e8d684b2c2cea34d569fd75efb84e0ac0165eeffdff06b724b9f32157878f"
       def install
         bin.install "aicrawler"
       end
